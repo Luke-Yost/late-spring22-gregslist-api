@@ -1,3 +1,4 @@
+import { housesService } from "../services/HousesService.js";
 import BaseController from "../utils/BaseController.js";
 import { logger } from "../utils/Logger.js";
 
@@ -8,7 +9,7 @@ export class HousesController extends BaseController {
   constructor(){
     super('api/houses')
     this.router
-
+    .get('',this.getAllHouses)
   }
 
   async getAllHouses(req, res, next){
